@@ -55,24 +55,24 @@ Usage
 
 Try this:
 
-`$ cd examples`
-`$ ruby ./generic.rb`
+    $ cd examples
+    $ ruby ./generic.rb
 
 That'll exercise the models a little.
 
 Also you can run:
 
-`$ ruby ./github.rb`
+    $ ruby ./github.rb
 
 Which calls the Github API to grab the recent Rails commits (from Github). It drops you into the debugger where you can inspect the Rails commits.
 
-`(rdb:1) pp commits`
+    (rdb:1) pp commits
 
 See the "To Do" section above for where to go next.
 
 Similarly, there is an example that grabs git commit id's from your local repo:
 
-`$ ruby ./local.rb`
+    $ ruby ./local.rb
 
 There you go. Now get to work.
 
