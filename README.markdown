@@ -50,6 +50,10 @@ To Do
 
 5. specs and more
 
+( Broaden support)
+
+6. think about other issue trackers
+
 Usage
 -----
 
