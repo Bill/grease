@@ -3,6 +3,8 @@
 require 'environment'
 require 'grease'
 
+require 'rubygems'
+
 require 'ruby-debug'
 Debugger.start
 

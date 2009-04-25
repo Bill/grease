@@ -1,5 +1,5 @@
-Git Release Notes Generator
-===========================
+Grease—The Git Release Notes Generator
+=============================================
 
 If you have an issue tracking system that references your Git repository then you ought to be able to generate release notes reports. A release notes report tells you things like:
 
@@ -22,35 +22,57 @@ There are models in place for:
 
 * ReleaseNotes - constructed with commits and ticket histories, this object will produce release notes
 
-There is some code in the examples directory to exercise these classes (generic.rb). Also there's code (in github.rb) to hit the Github API to grab some sample commits and drop you into the debugger (for further development).
+There is some code in the examples directory to exercise three situations:
+
+* generic.rb exercises the models using synthetic data
+
+* github.rb hits the Github API to grab some sample commits and drop you into the debugger (for further development).
+
+* local.rb grabs and sorts the commits from your local repo and drops you into the debugger (for further development)
 
 
 To Do
 -----
 
-( Connect to live data )
+( Connect to live Github data in github.rb)
 
-1. initialize Commit objects from git commit stream (from Github API or from command line `git rev-list --topo-order --reverse HEAD`
+1. initialize Commit objects from git commit stream
 
-2. grab ticket/issue data (from somewhere TBD) and use it to initialize StateChange and TicketHistory objects.
+2. acquire issue data from Github and use it to initialize StateChange and TicketHistory objects
 
-3. initialize ReleaseNotes from (1) and (2)
+3. initialize ReleaseNotes from (1) and (2) 
 
 ( Tool-ize )
 
 4. add command-line processing
 
+( Product-ize )
+
+5. specs and more
 
 Usage
 -----
 
-Try this: from the lib directory run:
+Try this:
 
-`$ ruby ./release-notes.rb`
+`$ cd examples`
+`$ ruby ./generic.rb`
 
-That'll exercise the models a little, and then call the Github API to grab the recent Rails commits (from Github). It drops you into the debugger where you can inspect the Rails commits:
+That'll exercise the models a little.
+
+Also you can run:
+
+`$ ruby ./github.rb`
+
+Which calls the Github API to grab the recent Rails commits (from Github). It drops you into the debugger where you can inspect the Rails commits.
 
 `(rdb:1) pp commits`
+
+See the "To Do" section above for where to go next.
+
+Similarly, there is an example that grabs git commit id's from your local repo:
+
+`$ ruby ./local.rb`
 
 There you go. Now get to work.
 
